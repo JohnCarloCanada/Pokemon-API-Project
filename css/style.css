@@ -1,0 +1,171 @@
+/* FONTS IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Overpass&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+h1,
+h3,
+h4 {
+  font-family: "Overpass", sans-serif;
+}
+
+p {
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+.header__section {
+  margin: 0 auto;
+  padding: 0 1em;
+  padding-top: 10em;
+}
+.header__h1 {
+  color: #ffffff;
+  font-size: clamp(1.75rem, 1.125rem + 2vw, 2.5rem);
+}
+.header__icon {
+  display: flex;
+  column-gap: 0.5em;
+  align-items: center;
+}
+.poke__icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.header__p {
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-left: 4em;
+  font-size: clamp(0.75rem, 0.3333rem + 1.3333vw, 1.25rem);
+}
+
+.form__section {
+  margin: 0 auto;
+  padding: 0 1em;
+}
+.form__inputs {
+  padding-top: 10em;
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  justify-content: center;
+}
+.form__inputs input[type="text"] {
+  padding: 0.5em 0.5em;
+  border-radius: 3px;
+  border: 2px solid rgb(66, 59, 59);
+  outline: none;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.form__inputs input[type="text"]::placeholder {
+  letter-spacing: 0px;
+  color: rgb(70, 36, 42);
+}
+.form__inputs input[type="text"]:focus {
+  border: 2px solid rgb(160, 151, 214);
+}
+
+#search__btn {
+  padding: 0.7em 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #37964f;
+  outline: none;
+  border: 1px solid #37964f;
+  color: #000;
+  text-transform: uppercase;
+}
+
+#search__btn:active {
+  border: 1px solid black;
+}
+.pokemon__details {
+  margin-top: 1.5em;
+  display: flex;
+  column-gap: 1em;
+}
+
+.pokemon__details img {
+  width: 130px;
+  display: block;
+}
+
+.details {
+  color: #ffffff;
+  margin-top: 2em;
+  letter-spacing: 2px;
+}
+
+.pokemon__abilities {
+  margin-top: 1em;
+}
+.ability {
+  margin-top: 0.25em;
+  display: flex;
+  margin-left: 1.5em;
+}
+
+.ability p:first-child {
+  margin-right: 0.5em;
+}
+
+.pokemon__type {
+  margin-top: 1em;
+}
+
+.pokemon__type h3 {
+  margin-top: 0.25em;
+}
+
+.pokemon__type p {
+  margin-left: 1.5em;
+  text-transform: uppercase;
+}
+
+.pokemon__abilities .ability p {
+  text-transform: uppercase;
+}
+.pokemon__name,
+.pokemon__abilities h4,
+.pokemon__type h3 {
+  color: #90b7e4;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 680px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr;
+  }
+
+  .form__inputs {
+    padding-top: 0;
+  }
+
+  .header__section {
+    padding-top: 5em;
+  }
+}
