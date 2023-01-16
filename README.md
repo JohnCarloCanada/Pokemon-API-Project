@@ -8,7 +8,7 @@ Technologies Used in this project:
 - CSS
 - JavaScript
 - AOS By Michal Snik
-- https://pokeapi.co/
+- [PokeApi](https://pokeapi.co/)
 
 
 All Resources that i used in this project is not mine and is under fair use policy all credits should be given to the rightful owners.
