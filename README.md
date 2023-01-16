@@ -7,7 +7,7 @@ Technologies Used in this project:
 - Html
 - CSS
 - JavaScript
-- AOS By Michal Snik
+- [AOS](https://michalsnik.github.io/aos/) by Michal Snik
 - [PokeApi](https://pokeapi.co/)
 
 
