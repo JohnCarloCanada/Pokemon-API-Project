@@ -10,7 +10,7 @@ Pokemon API project i created using the PokeApi.
 - [AOS](https://michalsnik.github.io/aos/) by Michal Snik
 - [PokeApi](https://pokeapi.co/)
 
-All Resources that i used in this project is not mine and is under fair use policy all credits should be given to the rightful owners.
+All Resources that i used in this project is not mine and is under the fair use policy all credits should be given to the rightful owners.
 
 ### Screenshots of the Project
 
