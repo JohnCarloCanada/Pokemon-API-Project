@@ -1,12 +1,15 @@
-import { lowerCaseFunc, upperCaseFunc } from "./utils.js";
+/* Importing the functions from the utils.js and pokemonDetails.js files. */
+import { utilsFunc } from "./utils.js";
+import { pokemonGet } from "./pokemonDetails.js";
 
 document.addEventListener("readystatechange", (e) => {
-  if (e.target.readyState) {
+  if (e.target.readyState === "complete") {
     initApp();
   }
 });
 
 function initApp() {
+  /* Selecting the elements from the DOM. */
   const searchBtn = document.querySelector("#search__btn");
   const searchField = document.querySelector("#search");
   const pokemonDetails = document.querySelector(".pokemon__details");
@@ -16,31 +19,35 @@ function initApp() {
     getPokemonDetails();
   });
 
+  /* Listening for the enter key to be pressed and if the search field is empty it will alert the user
+  to enter a pokemon name. If the search field is not empty it will call the getPokemonDetails
+  function. */
+  window.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" && searchField.value === "") {
+      e.preventDefault();
+      alert("Please enter a pokemon name");
+    } else if (e.key === "Enter") {
+      e.preventDefault();
+      getPokemonDetails();
+    }
+  });
+
+  /**
+   * It takes the value of the search field, passes it to the utilsFunc class, which then returns the
+   * value in lower case, then it uses that value to fetch the pokemon details from the pokeapi, then
+   * it passes the data to the pokemonGet class, which then returns the pokemon details in HTML format.
+   */
   const getPokemonDetails = async () => {
     try {
+      const useUtilsValue = new utilsFunc(searchField.value);
       const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${lowerCaseFunc(searchField.value)}`
+        `https://pokeapi.co/api/v2/pokemon/${useUtilsValue.lowerCaseFunc()}`
       );
       const data = await response.json();
 
-      pokemonDetails.innerHTML = `<img
-      src="${data.sprites.other["official-artwork"].front_default}"
-      alt="${data.name}"
-    />
-    <div class="details">
-      <h3 class="pokemon__name">${upperCaseFunc(data.name)}</h3>
-      <div class="pokemon__abilities">
-        <h4>Abilities</h4>
-        <div class="ability">
-          <p>${data.abilities[0].ability.name}</p>
-          <p>${data.abilities[1].ability.name}</p>
-        </div>
-      </div>
-      <div class="pokemon__type">
-        <h3>Type</h3>
-        <p>${data.types[0].type.name}</p>
-      </div>
-    </div>`;
+      const getDetails = new pokemonGet(data);
+
+      pokemonDetails.innerHTML = getDetails.getPokemon();
     } catch (error) {
       console.error(error);
     }

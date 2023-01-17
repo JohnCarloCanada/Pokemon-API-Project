@@ -1,9 +1,18 @@
-const lowerCaseFunc = (data) => {
-  return data.trim().toLowerCase();
-};
+/* It's a class that takes in a data object and returns a lowercase and uppercase version of the name
+property. */
+class utilsFunc {
+  constructor(data) {
+    this.data = data;
+    this.name = data.name;
+  }
 
-const upperCaseFunc = (data) => {
-  return data.charAt(0).toUpperCase() + data.slice(1);
-};
+  lowerCaseFunc() {
+    return this.data.trim().toLowerCase();
+  }
 
-export { lowerCaseFunc, upperCaseFunc };
+  upperCaseFunc() {
+    return this.name.charAt(0).toUpperCase() + this.name.slice(1);
+  }
+}
+
+export { utilsFunc };
