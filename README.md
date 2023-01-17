@@ -14,5 +14,8 @@ All Resources that i used in this project is not mine and is under the fair use 
 
 ### Screenshots of the Project
 
+-- Desktop View
 - ![Desktop View](images/DeskTopView.png)
+
+-- Mobile View
 - ![Mobile View](images/MobileView.png)
