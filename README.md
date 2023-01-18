@@ -12,10 +12,10 @@ Pokemon API project i created using the PokeApi.
 
 All Resources that i used in this project is not mine and is under the fair use policy all credits should be given to the rightful owners.
 
-### Screenshots of the Project
+## Screenshots of the Project
 
-Desktop View
+###  Desktop View
 ![Desktop View](images/DeskTopView.png)
 
-Mobile View
+### Mobile View
 ![Mobile View](images/MobileView.png)
