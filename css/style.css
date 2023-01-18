@@ -131,9 +131,11 @@ p {
   margin-top: 0.25em;
   display: flex;
   margin-left: 1.5em;
+  column-gap: 0.5em;
+  flex-flow: wrap row;
 }
 
-.ability p:first-child {
+.ability p {
   margin-right: 0.5em;
 }
 
@@ -158,7 +160,7 @@ p {
 .pokemon__type h3 {
   color: #90b7e4;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: clamp(1.75rem, 1.5417rem + 0.6667vw, 2rem);
 }
 
 /* RESPONSIVENESS */
