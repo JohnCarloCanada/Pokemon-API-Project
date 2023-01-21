@@ -14,21 +14,21 @@ function initApp() {
   const searchField = document.querySelector("#search");
   const pokemonDetails = document.querySelector(".pokemon__details");
 
-  searchBtn.addEventListener("click", (e) => {
+  searchBtn.addEventListener("click", async (e) => {
     e.preventDefault();
-    getPokemonDetails();
+    await getPokemonDetails();
   });
 
   /* Listening for the enter key to be pressed and if the search field is empty it will alert the user
   to enter a pokemon name. If the search field is not empty it will call the getPokemonDetails
   function. */
-  window.addEventListener("keypress", (e) => {
+  window.addEventListener("keypress", async (e) => {
     if (e.key === "Enter" && searchField.value === "") {
       e.preventDefault();
       alert("Please enter a pokemon name");
     } else if (e.key === "Enter") {
       e.preventDefault();
-      getPokemonDetails();
+      await getPokemonDetails();
     }
   });
 
