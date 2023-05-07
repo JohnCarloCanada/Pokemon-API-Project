@@ -40,9 +40,7 @@ function initApp() {
   const getPokemonDetails = async () => {
     try {
       const useUtilsValue = new utilsFunc(searchField.value);
-      const response = await fetch(
-        `https://pokeapi.co/api/v2/pokemon/${useUtilsValue.lowerCaseFunc()}`
-      );
+      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${useUtilsValue.lowerCaseFunc()}`);
       const data = await response.json();
 
       const getDetails = new pokemonGet(data);
